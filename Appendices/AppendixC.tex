@@ -1,0 +1,28 @@
+% Appendix C
+
+\chapter{Symmetric Double Well} % Main appendix title
+
+\label{AppendixC} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix C. \emph{Symmetric Double Well}} % This is for the header on each page - perhaps a shortened title
+\section{Symmetric Double Well}
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=0.8\textwidth]{./Figures/symmwell}
+	\caption[Symmetric Double Well]{The symmetric double well has a degeneracy in the minima, complicating the solution}
+	\label{fig:symmwell}
+\end{figure}
+The derivation for a symmetric double well follows exactly that for the case of false minimum decay up to \ref{sumall}. Consider figure \ref{fig:symmwell}. By symmetry it is possible to start and end an instanton path in either $x=\pm a$. For false vacuum decay there is no degeneracy between the minima and so an instanton path had to start and end at $x=0$. Now, however, this is no longer the case and so an instanton is taken to refer to a path which starts at $x=-a$ and ends at $x=+a$ while an anti-instanton refers to the opposite path. By symmetry both give the same contribution and will be referred to as bounces (K is implicitly redefined to account for this).  However, there will be a difference in the case which ends at the opposite minimum to that which does not as $\tau_0\rightarrow\infty$. In the first case there will be an odd number of bounces and in the second an even number. Therefore the sum for each case will be over odd and even numbers of pseudo particles respectively.
+\begin{equation}
+\langle \pm a \vert \mathrm{e}^{-H\tau_0} \vert a \rangle = \sum_{n even/n odd}^{\infty}  \left(\frac{\omega}{\pi}\right)^{1/2} \mathrm{e}^{-\omega \tau_0/2}\frac{\left(K\mathrm{e}^{-S_0}\right)}{n!}=\left(\frac{\omega}{\pi}\right)^{1/2}\mathrm{e}^{-\omega\tau_0/2}\frac{1}{2}\left[exp(K\mathrm{e}^{-S_0}T) \pm exp(-K\mathrm{e}^{-S_0}T)\right].
+\end{equation}
+Therefore there are now two eigenstates with energies
+\begin{equation}
+\label{shift}
+E_{\pm} = \frac{1}{2}\omega \pm K \mathrm{e}^{-S_0}
+\end{equation}
+Denoting these eigenstates by $\vert + \rangle$ and $\vert - \rangle$ the expectation values may also be read
+\begin{equation}
+{\vert \langle + \vert \pm a \rangle \vert}^2 = {\vert \langle - \vert \pm a \rangle \vert}^2 = - \langle a \vert - \rangle \langle - \vert -a \rangle = -\langle a \vert + \rangle \langle + \vert -a \rangle =\frac{1}{2}\left(\frac{\omega}{\pi}\right)^{1/2}
+\end{equation}
+and so there is not a degeneracy in the particle position but instead it can exist in either well with the effect of tunnelling ``smearing" the ground states. The lowest energy state will be that with an even superposition of the wavefunctions in each well while the higher energy corresponds to an odd superposition.  The shift of the energy in \ref{shift} is actually much smaller than neglected terms due to the exponential suppression. It is included, however, as this is the highest order term in the energy difference between these two states. It is shown in \citep{instln} that this gives the correct result for the potential $V = \lambda(x^2-\eta^2)^2$. 

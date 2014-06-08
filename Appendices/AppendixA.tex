@@ -1,0 +1,79 @@
+% Appendix A
+
+\chapter{Coherent State Formalism} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix A. \emph{Coherent States}} % This is for the header on each page - perhaps a shortened title
+\section{Harmonic Oscillator}
+First consider the harmonic oscillator in 1D quantum mechanics. The Hamiltonian is given by
+\begin{equation}
+{\bar H} = \frac{{\bar p}^2}{2m}+\frac{1}{2}m\omega^2{\bar q}^2
+\end{equation}
+where ${\bar p}$ and ${\bar q}$ are the momentum and position operators respectively and $\omega$ is the frequency of the oscillator. A state excited to level n is defined by
+\begin{equation*}
+\vert n \rangle = \frac{a^{\dagger}}{\sqrt{n!}}\vert 0 \rangle 
+\end{equation*}
+where $a$ is the annihilation operator. Consider now the state $\vert a \rangle$ defined by:
+\begin{equation}
+{\hat a} \vert a \rangle = a \vert a \rangle.
+\end{equation}
+Such a state is known as a coherent state. In the coordinate representation this may be written as
+\begin{equation}
+\label{harmcoh}
+\langle q \vert a \rangle = N.exp(-\frac{1}{2}a^2-\frac{1}{2}\frac{\omega}{q^2}+\sqrt{2\omega}aq).
+\end{equation}
+The coherent state representation of $\vert n \rangle$ is given by
+\begin{equation}
+\psi_n(a^*) \equiv \langle a \vert n \rangle = \langle a \vert 0 \rangle \frac{(a^*)^n}{\sqrt{n!}}
+\end{equation}
+and to determine the constant $\langle a \vert 0 \rangle$ consider
+\begin{equation}
+1 = \sum_n \langle a \vert n \rangle \langle n \vert a \rangle =  {\vert \langle 0 \vert a \rangle \vert}^2 \mathrm{e}^{{\vert a \vert}^2}
+\end{equation}
+giving the normalisation
+\begin{equation}
+\langle a \vert 0 \rangle = \mathrm{e}^{-1/2{\vert a \vert}^2}.
+\end{equation}
+Normalising such that 
+\begin{equation}
+\psi_n(a^*) \equiv \langle a \vert n \rangle = \frac{(a^*)^n}{\sqrt{n!}},
+\end{equation}
+the completeness relation is then written as
+\begin{equation}
+\label{comp}
+\int \frac{\mathrm{d}^2a}{\pi} \mathrm{e}^{-{\vert a \vert}^2} \vert a \rangle \langle a \vert = 1
+\end{equation}
+where
+\begin{equation}
+a = r\mathrm{e}^{i\theta} \rightarrow \mathrm{d}^2a = rdrd\theta 
+\end{equation}
+and the scalar product between states is written
+\begin{equation}
+\label{scalp}
+\langle \psi_n \vert \psi_m \rangle = \int \mathrm{e}^{-{\vert a \vert}^2} \frac{\mathrm{d}^2a}{\pi} [\psi_n(a^*)]^*\psi_m(a^*).
+\end{equation}
+Operators are defined by their kernel $A(b^*,a) \equiv \langle b \vert {\hat A} \vert a \rangle $ and act as
+\begin{equation}
+\label{kern}
+({\hat A} \psi)(b^*) = \int \mathrm{e}^{-{\vert a \vert}^2} \frac{\mathrm{d}^2a}{\pi} A(b^*,a)\psi(a^*).
+\end{equation}
+Finally the overlap between two coherent states is given by:
+\begin{equation}
+\label{overlap}
+\langle a \vert b \rangle = \sum_n \langle a \vert n \rangle \langle n \vert b \rangle = \sum_n \frac{{a^*b}^n}{n!} = \mathrm{e}^{a^*b}.
+\end{equation}
+\section{Scalar Field Theory}
+These results may be translated to field theory where the states are eigenstates of the annihilation operator of momentum $k$, ${\hat a_k}$ 
+\begin{equation}
+{\hat a_k}\vert \{a_k\}\rangle = a_k \vert \{a_k\}\rangle \forall k
+\end{equation}
+The starting point for Chapter \ref{Chapter3} is the generalisation of \ref{harmcoh} to scalar field theory which gives
+\begin{equation}
+\langle \phi \vert \{a_k\}\rangle = N.exp\left[-\frac{1}{2} \int \mathrm{d} k a_k a_{-k} -\frac{1}{2} \int \mathrm{d} k \omega_k {\tilde \phi}(k){\tilde \phi}(-k)+\int \mathrm{d}k \sqrt{2\omega_k} a_k {\tilde \phi}(k)\right]
+\end{equation}
+where 
+\begin{equation}
+\frac{1}{(2\pi)^{3/2}}\int \mathrm{d}x e^{ik.x}\phi(x) \equiv {\tilde \phi}(k)
+\end{equation}
+is the spatial Fourier transform of $/phi(x)$. Equations \ref{comp}, \ref{scalp} and \ref{kern} are generalised similarly.

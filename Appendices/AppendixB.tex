@@ -1,0 +1,33 @@
+% Appendix Template
+
+\chapter{Saddle Point Method} % Main appendix title
+
+\label{AppendixB} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+
+\lhead{Appendix B. \emph{Saddle Points}} % Change X to a consecutive letter; this is for the header on each page - perhaps a shortened title
+
+This derivation follows \citep{MOMP}. Consider an integral of the form
+\begin{equation}
+I(N) = \int_a^b\mathrm{d}z g(z)\mathrm{e}^{Nf(z)} \; \; N \gg 0
+\end{equation}
+where $f(z)$ is a complex analytic function and $N$ is a real number. Define $f(z) = u +iv$, the integral will be dominated by values of $u$ near its maximum. On the other hand if $v$ is not stationary then the oscillating contributions will cancel. This implies the largest contribution will be for $f'(z)=0$. This must be a saddle point of $f(z)$. In the case of several saddle points the integral is dominated by the highest. Assuming this is at $z_0$ by Cauchy's integral theorem the contour may be deformed such that it goes through that point. Near $z_0$ $g(z) \simeq  g(z_0)$ and $f(z)$ can be written as 
+\begin{equation}
+f(z) \simeq f(z_0)+ \frac{1}{2} f''(z_0)(z-z_0).
+\end{equation}
+The integral then becomes
+\begin{equation}
+I(N) \simeq g(z_0)\mathrm{e}^{Nf(z_0)} \oint_C\mathrm{d}z exp\left[\frac{1}{2}Nf''(z_0)(z-z_0)^2\right].
+\end{equation}
+Using a change of variables as
+ \begin{equation*}
+z-z_0 = r\mathrm{e}^{i\phi} \;\; f''(z_0) = \vert f''(z_0) \vert \mathrm{e}^{i\theta}
+\end{equation*}
+The choice of $\phi$ will not affect the result as this only controls the approach angle of the contour to the saddle point. By choosing it as $\phi = (\pi - \theta)/2$ the integral simplifies to
+\begin{equation}
+I(N) \simeq g(z_0)\mathrm{e}^{Nf(z_0)}\mathrm{i\phi} \int\mathrm{d}r exp\left[-\frac{1}{2}N\vert f''(z_0)\ vert r^2\right]
+\end{equation}
+This is now just a Gaussian integral and the result is
+\begin{equation}
+I(N) \simeq g(z_0)\mathrm{e}^{Nf(z_0)}\mathrm{i\phi} \frac{2\pi}{\vert Nf''(z_0)\vert}^2.
+\end{equation}
+This is the saddle point approximation to the integral. It is also known as the method of steepest descent. This is because this choice of $\phi$ corresponds to a path of steepest descent from the saddle point.

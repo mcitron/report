@@ -1,0 +1,14 @@
+% Chapter Template
+
+\chapter{Trigger} % Main chapter title
+
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\lhead{Chapter 4. \emph{Trigger}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Trigger}
+The Level 1 trigger (L1) is designed to filter from $40MHz$ to $\mathcal{O}(100kHz)$ to allow processing by the high level trigger (HLT) while keeping high acceptance for interesting events. This has worked well at previous luminosities under $10^{34} cm^{-2}s^{-1}$. However, with the upgrade the luminosity will increase to $2\times10^{34} cm^{-2}s^{-1}$. The current Global Calorimeter Trigger (GCT) is designed to find jets and compute global energy sums. It splits the detector into different regions to cluster jets\cite{gct}. To process the data with global algorithms there is a trade off between granularity and the sharing of data. An alternative to this is the Time Multiplexed Trigger (TMT)\cite{rose}. This splits the data by time rather than detector region. The data are buffered over several bunch crossings which allows the whole event to be processed on one board without loss of granularity. Work to implement a TMT in the upcoming Run 2 of the LHC is ongoing. 
