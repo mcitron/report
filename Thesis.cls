@@ -182,13 +182,13 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{False Vacuum Decay from Particle Collisions} % Your thesis title - this is used in the title and abstract
+\thesistitle{Trigger Studies and the $\boldsymbol{\alpha_T}$ search} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Dr Arttu Rajantie} % You supervisor's name - this is used in the title page
+\supervisor{Dr Oliver Buchmueller} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
-\degree{MSc} % Your degree name - this is currently used in the title page and abstract
+\degree{Nine Month Report} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------   
 \authors{Matthew Citron} % Your name - this is used in the title page and abstract
 %-------------------------------------------------   
@@ -297,8 +297,8 @@
   \begin{center}
     \setlength{\parskip}{0pt}
     {\normalsize \UNIVNAME \par} % University name in capitals
-    \bigskip
-    {\huge{\textit{Abstract}} \par}
+    %\bigskip
+   % {\huge{\textit{Abstract}} \par}
     \bigskip
     {\normalsize \facname \par} % Faculty name
     {\normalsize \deptname \par} % Department name
