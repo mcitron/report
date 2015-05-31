@@ -23,23 +23,54 @@ Considering the previous approach there are three main (related) issues that can
 
 \section{Improvements for Run 2}
 
-In order to address the issues raised above a new strategy has been adopted. Firstly using an improved trigger strategy the \alphat thresholds per bin have been reduced to keep the minimum \mht requirement around $130 GeV$ (shown in \ref{tab:alphat-thresholds}). \footnote{From a QCD contamination study undertaken using data from Run 1 this is the lowest threshold for effective QCD suppression \cite{ANYTHING}. QCD contamination will be extensively studied when data from Run 2 is available}. This maximises the possible acceptance using the \alphat variable. To then optimise sensitivity for each \scalhtcat bin several variables which make use of missing energy were investigated. As there are $30 (categories) \times7 (ht regions) = 210 bins$ choosing these thresholds manually is not feasible. An automated binning procedure which accounts for systematic errors as well as SM yields in both the signal and control regions has been implemented for this purpose and is described below. Utilising this procedure and investigating a range of signal models allows determination of the optimal variable to use for binning.          
+In order to address the issues raised above a new strategy has been adopted. Firstly using an improved trigger strategy the \alphat thresholds per bin have been reduced to keep the minimum \mht requirement around $130 GeV$ (shown in \ref{tab:alphat-thresholds}). \footnote{From a QCD contamination study undertaken using data from Run 1 this is the lowest threshold for effective QCD suppression \cite{ANYTHING}. QCD contamination will be extensively studied when data from Run 2 is available}. This maximises the possible acceptance using the \alphat variable. To then optimise sensitivity for each \scalhtcat bin several new variables (NV) which make use of missing energy were investigated. As there are $30 (categories) \times7 (ht regions) = 210 bins$ choosing these thresholds manually is not feasible. An automated binning procedure which accounts for systematic errors as well as SM yields in both the signal and control regions has been implemented for this purpose and is described below. Utilising this procedure and investigating a range of signal models allows determination of the optimal variable to use for binning.          
 
+\subsection{Strategies}
+
+There are several possible strategies for binning and utilising the data in each \scalhtcat bin. In order of similarity to the approach taken in run 1. The most similar approach to the previous strategy is simply to choose NV thresholds (per \scalht) which map closely to the \alphat requirements used in Run 1 (S0). Following from this is to run the optimisation procedure described below and use the last NV threshold in each \scalhtcat bin (S1). In these cases systematics are detemined via the closure tests in exactly the same way as for Run 1.
+
+The last two strategies take advantage of the full range of the NV. The more conservative approach is to determine uncorrelated systematics in the NV dimension via closure tests and use these to determine bin thresholds per NV value. These systematics are used in the optimisation and the likelihood is fully binned with uncorrelated systematics along the NV dimension (S2). This has the advantage of remaining purely data driven. Finally, a shape analysis can be used. In this case there is no need for optimisation. The normalisation systematic is the same as for S0 and S1 (fully determined by data) but templates generated using Monte Carlo in the signal region for each dominant systematic source are used as the shape systematics for each background source along the NV dimension.
+
+
+
+\subsection{Automated Binning}
+
+To determine the binning in the NV an automated procedure is used. Initially this is run for each signal model separately and works as follows. 
+\begin{enumerate}
+\item To ensure the analysis remains data driven the NV threshold is chosen such the number of events in the control samples (not split in btags) for the relevant backgrounds is sufficient to carry out closure tests. This threshold is then used as an upper bound for the NV binning ($NV_{closure}$). 
+  \item This the systematic error is taken from closure tests. This will be \scalhtcat dependant for the case of correlated NV bins or also NV dependant if the NV bins are decorrelated.  	
+  \item The signal and background counts integrated from each NV threshold to $\infty$ are found.
+  \item The systematic error is added in quadrature to the statistical error determined from the transfer factor from the control region to the signal region.
+  \item The significance is the found for every possible NV cut value using the asymptotic formula considering data counts given by background plus signal contribution and the background only prediction with the uncertainty determined above. This is truncated at $NV_{closure}$.
+  \item The significance is then smoothed to remove fluctuations and the maximum is assigned as the highest lower bin threshold.
+  \item The procedure is repeated integrating up to the lower bin threshold found in the previous step. A minimum bin width is enforced to minimise bin migration.
+  \item The procedure stops when the significance is below a predetermined threshold.
+\end{enumerate}
 \begin{table}[h!]
-  \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
+  \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}. For the $>$800 bin there is a direct \mht rather than \alphat requirement}
   \centering
   \footnotesize
-  \begin{tabular}{ lcccccc }
+  \begin{tabular}{ lccccccc }
     \hline
     \hline
-    \scalht      & 200--250   & 250--300   & 300--350  & 350--400  & 400--800 \\ %& $>$900       \\
+    \scalht      & 200--250   & 250--300   & 300--350  & 350--400  & 400--800 \\ & $>$800       \\
     \hline                                                                     
-    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52     \\  %& 0.505         \\
-    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 \\  %& $\sim$126 \\
+    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52     \\  & 0         \\
+    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 \\  & 130 \\
     \hline
     \hline
   \end{tabular}
 \end{table}
+
+To ensure the same bins are used for all signal models a representative selection of models are used to determine the optimal binning for each \scalhtcat bin. The model with the highest exclusion in each bin then determines the binning. This is done for every \scalhtcat bin and a standard binning is found for all models.
+
+\section{Results}
+
+The results considered below consider a simplified approach where bins in the NV dimension are given a single correlated systematic decided by the closure test. This therefore allows an easy comparison between different variables and the gain from adding bins below the furthest threshold.
+
+
+
+
 
 
 % \begin{figure}
@@ -48,5 +79,4 @@ In order to address the issues raised above a new strategy has been adopted. Fir
 %   \caption{SUSY production cross sections at 14 TeV compared with 8TeV}
 %   \label{snow}
 % \end{figure}
-
 
