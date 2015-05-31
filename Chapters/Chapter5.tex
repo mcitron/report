@@ -1,10 +1,10 @@
 % Chapter Template
 
-\chapter{Jets and pileup at stage 2} % Main chapter title
+\chapter{Jets and Pileup at Stage 2} % Main chapter title
 
 \label{Chapter 5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-\lhead{Chapter 5. \emph{Conclusions}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+\lhead{Chapter 5. \emph{Jets and Pileup}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -12,7 +12,7 @@
 
 \section{Jet Algorithm}
 \label{algo}
-The focus of the results in this report will be on studies for jet definitions and pileup subtraction algorithms for the stage 2 trigger. The legacy jet algorithm is described in \cite{gctalgo}. At stage 2 the TMT allows the granularity to be significantly increased compared to the legacy system (the cells used to make the jets will reduce from $4\times4$ towers to single towers). The algorithm must change to take advantage of this. Additionally, the increase in energy to $13TeV$ will mean jets are  boosted and therefore smaller in size. To account for this at level one the cone size should be decreased. The algorithm presented here uses a cone size of $9\times9$ (compared to $12\times12$ for the GCT). This corresponds to the decrease in jet size for the HLT - from $R=0.5$ to $R=0.4$ for the anti $k_T$ jet radius parameter \cite{Antik_t}. The boost for jets from the primary vertex means most of their energy is likely to be in the central (seed) tower. The algorithm is thus as follows: each trigger tower in turn is taken as the candidate. The towers in the 4 surrounding rings (or up to the edge in $\eta$) are then compared to the seed tower using the mask shown in figure \ref{mask}. If the comparison is true for any tower then the seed is vetoed and the next tower is checked. The mask is designed to be unambiguous for towers of equal energy. If a seed is not vetoed then a jet is defined at that tower position with $p_T$ given by the total energy of the towers.   
+The focus of the results in this report will be on studies for jet definitions and pileup subtraction algorithms for the stage 2 trigger. The legacy jet algorithm is described in \cite{gctalgo}. At stage 2 the TMT allows the granularity to be significantly increased compared to the legacy system (the cells used to make the jets will reduce from $4\times4$ towers to single towers). The algorithm must change to take advantage of this. Additionally, the increase in energy to $13TeV$ will mean jets are  boosted and therefore smaller in size. To account for this at level one the cone size should be decreased. The algorithm presented here uses a cone size of $9\times9$ (compared to $12\times12$ for the GCT). This corresponds to the decrease in jet size for the HLT - from $R=0.5$ to $R=0.4$ for the anti $k_T$ jet radius parameter \cite{Antik_t}. Additionally, the boost for jets from the primary vertex means most of their energy is likely to be in the central (seed) tower which should define their direction. The algorithm is thus as follows: each trigger tower in turn is taken as the candidate. The towers in the 4 surrounding rings (or up to the edge in $\eta$) are then compared to the seed tower using the mask shown in figure \ref{mask}. If the comparison is true for any tower then the seed is vetoed and the next tower is checked. The mask is designed to be unambiguous for towers of equal energy. If a seed is not vetoed then a jet is defined at that tower position with $p_T$ given by the total energy of the towers.   
 \begin{figure}
 \centering
     \includegraphics[width=0.5\textwidth]{Figures/mask.png}
@@ -21,17 +21,17 @@ The focus of the results in this report will be on studies for jet definitions a
 \end{figure}
 The two main problems with this algorithm are that sufficiently close jets will appear as a single jet and that energy may be lost if a tower that vetoes another is itself vetoed by a tower sufficiently far away not to include the far tower's energy. The first case is common to all jet algorithms with a fixed cone size, but as the energy is not lost, the single jet or total energy will almost certainly be enough to trigger. Despite this a quality bit adapted from the idea of n-subjetiness \cite{nsub} is under investigation. The lost energy from chain vetos is found to be a small (~0.1\%) inefficiency.
 
-\section{Pile Up Subtraction}
-\subsection{Pile Up}
-The luminosity of the LHC will be increased in the upgrade to a maximum of $L = 1.4\times10^{34} cm^{-2}s^{-1}$. The easiest way to increase luminosity while maintaining stability is to use large, but widely separated, proton bunches \cite{PUform}. However, for the detector this means increased number of primary vertices (pile up) at the collision point. The average number of vertices per bunch crossing is given in equation \ref{pu}.
+\section{Pileup Subtraction}
+\subsection{Pileup}
+The luminosity of the LHC will be increased in the upgrade to a maximum of $L = 1.4\times10^{34} cm^{-2}s^{-1}$. The easiest way to increase luminosity while maintaining stability is to use large, but widely separated, proton bunches \cite{PUform}. However, for the detector this means increased number of primary vertices (pileup) at the collision point. The average number of interactions per bunch crossing is given in equation \ref{pu}.
 
 \begin{equation}
 \langle N_p \rangle = \sigma L \tau_b
 \label{pu}
 \end{equation}
 
-where $\langle N_p \rangle$ is the average number of vertices, $\sigma$ is the cross section and $\tau_b$ is the bunch spacing. At the end of run 1 with $8 TeV$ ($\sigma = 71.5mb$),$\tau_b = 50ns$ and $L = 0.75\times10^{34} cm^{-2}s^{-1}$ gave $\langle N_p \rangle\simeq27$. After LS1 the luminosity and $\sigma$ gain (to $76mb$) this will increase to $\langle N_p \rangle\simeq40$. 
-\subsection{Effect of Pile Up}
+where $\langle N_p \rangle$ is the average number of interactions, $\sigma$ is the cross section and $\tau_b$ is the bunch spacing. At the end of run 1 with $8 TeV$ ($\sigma = 71.5mb$), $\tau_b = 50ns$ and $L = 0.75\times10^{34} cm^{-2}s^{-1}$ gave $\langle N_p \rangle\simeq27$. After LS1 the luminosity and $\sigma$ gain (to $76mb$) will increase this to $\langle N_p \rangle\simeq40$. 
+\subsection{Effect of Pileup}
 The majority of pileup events are low energy QCD processes which will appear as randomly distributed energy in the calorimeter region (about 1 GeV per unit area). This pileup can have two detrimental effects for the L1 trigger. Firstly, when the pileup is evenly distributing the energy of the real jets is slightly increased, thus artificially increasing the total transverse energy. The second problem occurs when the pileup is randomly clustered - significantly boosting a single jet or forming fake jets. Due to the imperfect response of the detector and profile of the pileup these effects may be dependent on $\eta$. In order to trigger only on hard events the effect of the pileup must be mitigated (subtracted). In this report two example methods of pileup subtraction (global $\rho$ and donut) will be discussed.
 \subsection{Global $\boldsymbol{\rho}$}
 If the detector response is assumed to be approximately $\eta$ independent then one may use an event based pileup subtraction. In the case of global $\rho$ first all the jets are reconstructed using the algorithm in \ref{algo}. The jets are then ranked in order of energy density $\rho$ where for jet $i$, $\rho^i$ is defined in equation \ref{rho}.
@@ -58,6 +58,5 @@ An additional method to remove pure pileup jets is to require a seed threshold. 
 \subfigure[Donut Subtraction\label{donutnint}]{\includegraphics[width=7cm]{Figures/strips_onestrips}}
 \hfill
 \caption{Dependence on the number of interactions of the two pileup subtraction regimes studied.}
-\label{simp}
 \end{figure}
 

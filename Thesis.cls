@@ -341,7 +341,7 @@
 }
 \renewcommand\listoffigures{
 \btypeout{List of Figures}
-\addtotoc{List of Figures}
+%\addtotoc{List of Figures}
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
@@ -359,7 +359,7 @@
 }
 \renewcommand\listoftables{
 \btypeout{List of Tables}
-\addtotoc{List of Tables}
+%\addtotoc{List of Tables}
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
