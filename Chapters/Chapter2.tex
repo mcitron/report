@@ -1,22 +1,56 @@
-% Chapter 2
+% Chapter 3
 
-\chapter{CMS Detector} % 
+\chapter{The alphat Search} % 
 
-\label{Chapter 2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-\lhead{Chapter 2. \emph{CMS Detector}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 2. \emph{The \alphat Search}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
-The Compact Muon Solenoid (CMS \cite{CMSTDR}) is one of two general purpose detectors at the LHC which have performed exceptionally well during run 1. It is described in detail in \cite{CMS}. 
 
+\section{alphat}
+QCD multijet events with missing energy from mismeasured jets is a dominant source of background\cite{randall}. The \alphat variable has been designed explicitly to remove this source of background and is defined in equation \ref{alph}.
+\begin{equation}
+\label{alph}
+\alpha_T=\frac{1}{2}\frac{1-(\Delta H_T/H_T)}{\sqrt{1-(\cancel{H_T}/H_T)^2}}
+\end{equation}
+This is defined for n-jets by creating a pseudo di-jet system which minimises the difference in energy between the two pseudo jets ($\Delta H_T$) in the event. The total transverse energy is defined as $H_T=\sum_{i=1}^n|p_t^{j_i}|$ and the missing energy $\cancel{H_T}=|{\sum_{i=1}^n p_T^{j_i}}|$. In the case of jet mismeasurement or neutrinos from heavy flavour jets the energy imbalance $\Delta H_T$ and missing energy $\cancel{H_T}$ are highly correlated and $\alpha_T<0.5$. A sample distribution of $\alpha_T$ from this search is shown in figure \ref{alphdis} \cite{CMSAT8}. A dedicated study is required to determine \alphat thresholds for which QCD contamination is negligible.
 \begin{figure}
 \centering
-    \includegraphics[width=0.9\textwidth]{./Figures/CMS_Slice.jpg}
-  \caption{Cross Section of CMS showing the paths of various particle types through different segments of the detector \cite{cmsslice}}
-  \label{CMS_SLICE}
+    \includegraphics[width=0.8\textwidth]{Figures/sample_aT.jpg}
+  \caption{$\alpha_T$ distribution shown for a particular search region. The contribution from a SUSY reference model shows events above 0.55.}
+  \label{alphdis}
 \end{figure}
 
-A cross section of CMS is shown in figure \ref{CMS_SLICE}. The coordinate system used by CMS takes the origin at the collision point. The z-axis points along the beam direction and defines the azimuthal angle, $\phi$. The psuedorapidity is defined by the polar angle, $\theta$, as $\eta=-ln(tan(\theta/2))$. The coverage of CMS is $|\eta|<5$. Transverse energies and momenta ($E_T $ and $p_T$)  are defined perpendicular to the beam \cite{cmsiop}. 
+\subsection{Event Selection}
+In order to reduce backgrounds from electroweak processes events with isolated leptons are vetoed. A pure multijet topology is ensured by additionally vetoing events with isolated photons. Events are categorised according the jet multiplicity and btag (number of jets originating from b quarks). Selected events are required to have $\scalht > 200 GeV$ and at least two jets with $p_T > 100GeV$ and the remainder $p_T > 40GeV$. A new asymmetric category has been added to increase sensitivity to monojet like topologies. In this case the lead jet has $p_T > 100 GeV$ and all remaining jets satisfy $100 GeV > p_T > 40GeV$. All jets must have $\eta < 2.4$.
 
-Charged particle trajectories are measured by the silicon pixel and strip tracker \cite{siliconTDR} in order to find their momentum. The CMS tracker achieves $15\mu m$ accuracy and a 1\% resolution for a particle with momentum up to $p_T < 40GeV$ with coverage for $|\eta|<2.5$. Muons are measured in the range $|\eta|<2.4$ and a $p_T$ resolution from $1-5\%$ can be achieved for $p_T < 1Tev$. The ECAL measures the energy of incident photons and electrons with aresolution better than $0.5\%$ for $E_T > 100 GeV$. The barrel provides coverage up to $|\eta| < 1.4$ and is extended to $|\eta|<3$ by the endcap. The HCAL has coverage of $|\eta|<3.0$ \cite{hcal} and a resolution for $E_T > 100GeV$ of 11\%. When combined with the ECAL jets can be measured to a resolution of $\Delta E/E \approx 100 \%/\sqrt{E[GeV]} \oplus 5\%$.
-Potentially useful events are selected by the Level 1 (L1) hardware trigger which reduces the data rate from $\mathcal{0}40MHz$ to $100kHz$. These events are then processed in the HLT which utilises all detector information to further reduce the rate to $\mathcal{O}1kHz$.
+\subsection{Background Estimation}
+\label{sec:bkgd-est}
+The remaining background from electroweak processes must be estimated. Depending on the bin the dominant backgrounds are vector boson and top pair production in association with jets. To minimise dependence on Monte Carlo a data driven approach is taken. The number of events in control regions with low signal contamination is measured. Then the effect in the signal region is predicted using equation \ref{control}. Previously, a dimuon and photon control sample were used to predict Zinv while the top and W Jets backgrounds were predicted using single muon. To understand the systematic error on these predictions closure tests are carried out whereby one control sample is used to predict another. Using an ensemble of such tests (binned in \scalht and categories) allows an estimation of the size of any systematic in each bin. For Run 2 the possibility of adding electron control samples has been investigated. This should allow more precise determination of backgrounds as well as allowing additional closure tests.
+
+\begin{equation}
+\label{control}
+N_{pred}^{signal}=\frac{N_{MC}^{signal}}{N_{MC}^{control}}\times N^{control}_{obs}
+\end{equation} 
+
+% \subsection{Interpretation}
+% Finally the data from CMS must be interpreted. This is done using simplified models which have only one production and decay mode and are a measure of the reach of a search in parameter space. Two sample simplified model decays from the latest 8 TeV $\alpha_T$ analysis involving decays to quarks are shown in figure \ref{simp}. Each simplified model is suited to a different signal bin. The model predictions for different parent and LSP masses are then confronted with the background estimation along with the data to make mass exclusion planes. These are shown in figure \ref{simp2} for the latest search.
+% \begin{figure}
+% \hfill
+% \subfigure[Squark Production (T1)]{\includegraphics[width=5cm]{Figures/T1}}
+% \hfill
+% \subfigure[Gluino Production (T2)]{\includegraphics[width=5cm]{Figures/T2}}
+% \hfill
+% \caption{Two typical simplified models involving gluino and squark decays to quarks}
+% \label{simp}
+% \end{figure}
+% \begin{figure}
+% \hfill
+% \subfigure[T1 Exclusion]{\includegraphics[width=7cm]{Figures/T1plot}}
+% \hfill
+% \subfigure[T2 Exclusion]{\includegraphics[width=7cm]{Figures/T2plot}}
+% \hfill
+% \caption{Exclusion planes for two simplified models}
+% \label{simp2}
+% \end{figure}

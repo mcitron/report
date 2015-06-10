@@ -74,7 +74,7 @@
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
-\setmarginsrb  { 1.5in}  % left margin
+\setmarginsrb  { 1.0in}  % left margin
                         { 0.6in}  % top margin
                         { 1.0in}  % right margin
                         { 0.8in}  % bottom margin
@@ -147,12 +147,12 @@
         keepspaces=true}
 \lstdefinestyle{matlab} {
         language=Matlab,
-        keywordstyle=\color{blue},
+        keywordstyle=\color{black},
         commentstyle=\color[rgb]{0.13,0.55,0.13}\em,
         stringstyle=\color[rgb]{0.7,0,0} }
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
-   colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
+   colorlinks,linkcolor={black},citecolor={black},urlcolor={red},
    pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \pdfstringdefDisableCommands{
    \let\\\space
@@ -307,7 +307,7 @@
     \bigskip
     {\normalsize\bf \@title \par} % Thesis title
     \medskip
-    {\normalsize by \authornames \par} % Author name
+    {\normalsize \authornames \par} % Author name
     \bigskip
   \end{center}
 }
