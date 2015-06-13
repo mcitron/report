@@ -19,7 +19,7 @@ QCD multijet background it may not be optimal for distinguishing
 signal from the remaining background. Additionally, each bin can have
 only one \alphat (and therefore \mht) threshold and no advantage 
 may be taken of the shape. Finally, each jet category has the same 
-\alphat threshold per \scalht bin. Higher jet multiplicities lead to 
+\alphat threshold per \scalht bin. Even with genuine \met  higher jet multiplicities lead to 
 lower \alphat values and so more flexibility is desirable. 
 In this section when the \scalht bin for each particular jet and btag 
 category is considered this will be denoted as \scalhtcat.
@@ -27,32 +27,24 @@ category is considered this will be denoted as \scalhtcat.
 
 \section{Strategy for Run 2}
 
-The trigger strategy has been optimised to allow lower \alphat thresholds in each bin. 
-This deals with the QCD multijet background. Sensitivity may then be maximised
-by using a new discriminating variable such as \mht to conduct a shape analysis in each bin.
-In order to retain some control in data a requirement of 10 events is made
-on control counts for the highest new variable threshold.
-
+Taking into account trigger requirements and QCD backgrounds the \alphat thresholds are minimised in each bin. These may be revised after studies with data. Sensitivity is optimised
+by using a new discriminating variable such as \mht to conduct a shape analysis in each \scalhtcat bin. 
+%To remain data driven a requirement is made on the number of expected control counts for the highest new variable threshold. 
 In each \scalhtcat bin the normalisation and systematics are set by the control samples
 and closure tests described in Section~\ref{sec:bkgd-est}. The scale of the event is
 thus fully controlled in data. Investigations are underway for how the shapes 
 and systematics can be found using the shape in the control regions. Given the low
-counts in the tails some kind of fit and extrapolation would be required.
-Alternatively the systematics may be estimated entirely from MC by varying the main 
-sources of systematic uncertainty and finding the effect on the shape.
-
-
+counts in the tails some kind of fit and extrapolation would be required. To minimise the extrapolation a conservative requirement of 10 expected control events is made on the highest new variable threshold. 
+%Alternatively the systematics may be estimated entirely from MC by varying the main 
+%sources of systematic uncertainty and finding the effect on the shape.
 
 \section{Likelihood Model}
 
-The likelihood model used previously is described in detail in \cite. 
-In each \scalhtcat bin there is an uncorrelated (log normal) nuisance 
-per transfer factor for the control prediction. There is also a log uniform 
-systematic per control sample to account for the control counts to make
-the prediction. For the shape analysis there is an new variable dimension.
-This adds nuisances for each systematic shape uncertainty.
+The likelihood model used previously is described in detail in \cite{search}. 
+In each \scalhtcat bin there is an uncorrelated (log normal) nuisance per transfer factor for the control prediction. The shape analysis adds an additional dimension.
+There will be an additional nuisance for each systematic shape uncertainty.
 
-All significances and limits are calculated using the asymptotic formulae described in \cite. 
+All results shown are calculated using asymptotic formulae. 
 A study was carried out into the reliability of this estimation and the results shown in \ref{asympToys}. 
 As seen the differences between CLs toy and the asymptotic formulae are below 10\%.
 
@@ -63,6 +55,62 @@ As seen the differences between CLs toy and the asymptotic formulae are below 10
   \caption{Comparison between asymptotic and toy MC limits}
   \label{fig:asympToys}
 \end{figure}
+
+\section{Results}
+
+In order to compare strategies in the absence of data the shape systematics must be estimated. A template for the plus one sigma systematic is found by multiplying each shape by an expontential such that 
+the difference from the nominal is set to X\% in the final bin 
+and the normalisation is unchanged. The down one sigma templates are found by 
+dividing by the same exponential and normalising. Results below are shown
+for 10/fb. Luminosity scenarios of 1/fb, 3/fb and 10/fb are under consideration.
+To be conservative systematics derived in Run 1 are utilised for the normalisation.
+
+The variables considered were \alphat, \mht,$\mht/\scalht$, $\mht/\sqrt{\scalht}$ and 
+$M_eff$ ($\mht+\scalht$). The significances for a shape systematic 
+scenario of X=50\% and 10/fb are shown in Figure~\ref{fig:signif}. 
+
+\begin{figure}
+\centering
+    \includegraphics[width=0.6\textwidth]{Figures/signif}
+  \caption{The \alphat distribution shown for a particular search region. The QCD background is completely removed by an \alphat cut at 0.55 while processes with true \met remain.}
+  \label{fig:signif}
+\end{figure}
+
+As can be seen the \mht variable is consistently near or at the highest 
+significance. This can be expected as both compressed and uncompressed models can be expected 
+to have significant \mht even though the \scalht scales are very different. Variables optimised
+for compressed models (e.g. $\mht/\scalht$) and large mass splittings (e.g. $M_eff$) cannot perform consistently across a range of topologies.
+
+To evaluate the effect on performance of using a shape analysis compared to the
+Run 1 strategy several different shape systematics are compared. The results 
+are shown in Table~\ref{table:syst} for $X = 0,50,100\%$. Even for the conservative
+$X=100\%$, significant gains over the previous strategy can be seen. Comparing
+$X=50,100\%$ to $X=0\%$ emphasises the importance of correctly evaluating the uncertainties on the shape.
+
+\begin{table}[!h]
+  \label{table:syst}
+  \caption{Summary of the siginificances found for shape analysis compared
+    with the Run 1 strategy. Even with 100\% error in the final bin
+  the shape analysis performs significantly better than before.}
+  \centering
+  \footnotesize
+  \begin{tabular}{ l | l | l | l | l | l | l }
+    Model & Mass/GeV & LSP Mass/GeV & Run 1 & Shape (X=0) & Shape (X=50) & Shape (X=100) \\ \hline
+    T2tt & 650 & 325      & 1.09& 1.83& 1.38& 1.27\\ 
+    T2tt & 500 & 325      & 0.60& 1.93& 1.42& 1.33\\ 
+    T2tt & 425 & 325      & 1.11& 2.25& 1.79& 1.65\\ 
+    %T2qq & 600 & 550     & 4.38& 8.98& 6.01& 5.19\\ 
+    T2qq & 1200 & 100      & 1.10& 3.17& 2.37& 2.14\\
+    T2bb & 900 & 100      & 1.54& 1.85& 1.59& 1.48\\ 
+    T2bb & 600 & 580      & 0.35& 0.81& 0.60& 0.53\\ 
+    T1tttt & 1500 & 100    & 1.04& 3.10& 2.65& 2.58\\
+    T1tttt & 1200 & 800    & 0.77& 1.63& 1.15& 1.09\\
+    T1qqqq & 1400 & 100    & 0.86& 4.71& 3.17& 2.50\\
+    T1qqqq & 1000 & 800    & 2.45& 4.53& 2.90& 2.40\\
+    T1bbbb & 1500 & 100    & 2.41& 6.93& 5.82& 5.61\\
+    T1bbbb & 1000 & 900    & 3.61& 7.12& 5.61& 5.29\\
+  \end{tabular}
+\end{table}
 
 % \subsection{Automated Binning}
 %
@@ -99,53 +147,3 @@ As seen the differences between CLs toy and the asymptotic formulae are below 10
 % There are several possible strategies for binning and utilising the data in each \scalhtcat bin. The most similar approach to the previous strategy is simply to choose NV thresholds (per \scalht) which map closely to the \alphat requirements used in Run 1 (S0). Following from this is to run the optimisation procedure described below and use the last NV threshold in each \scalhtcat bin (S1). In these cases systematics are detemined via the closure tests in exactly the same way as for Run 1.
 %
 % The last two strategies take advantage of the full range of the NV. The more conservative approach is to determine uncorrelated systematics in the NV dimension via closure tests and use these to determine bin thresholds per NV value. These systematics are used in the optimisation and the likelihood is fully binned with uncorrelated systematics along the NV dimension (S2). This has the advantage of remaining purely data driven. Finally, a shape analysis can be used. In this case there is no need for optimisation. The normalisation systematic is the same as for S0 and S1 (fully determined by data) but templates generated using Monte Carlo in the signal region for each dominant systematic source are used as the shape systematics for each background source along the NV dimension.
-\section{Results}
-
-In order to compare strategies in the absence of data the plus one sigma systematic
-templates are found by multiplying each shape by an expontential such that 
-the difference from the nominal is set to X\% in the final bin 
-and the normalisation is unchanged. The down one sigma templates are found by 
-dividing by the sample exponential and normalising. Results below are shown
-for 10/fb. Luminosity scenarios of 1/fb, 3/fb and 10/fb are under consideration.
-
-The variables considered were \alphat, \mht,$\mht/\scalht$, $\mht/\sqrt{\scalht}$ and 
-$M_eff$ ($\mht+\scalht$). The significances from a conservative shape systematic 
-scenario of X=100\% and 10/fb are shown in Figure~\ref{}. 
-As can be seen the \mht variable is consistently near or at the highest 
-significance. This can be expected as both compressed and uncompressed models can be expected 
-to have significant \mht even though the \scalht scales are very different. Variables optimised
-for compressed models (e.g. $\mht/\scalht$) and large mass splittings (e.g. $M_eff$) cannot perform consistently
-across a range of topologies.
-
-To evaluate the effect on performance of using a shape analysis compared to the
-Run 1 strategy several different shape systematics are compared. The results 
-are shown in Table~\ref{table:syst} for $X = 0,50,100\%$. Even for the conservative
-$X=100\%$, significant gains over the previous strategy can be seen. Comparing
-$X=50,100\%$ to $X=0\%$ emphasises the importance of correctly evaluating the 
-uncerainties on the shape.
-
-\begin{table}[!h]
-  \label{table:syst}
-  \caption{Summary of the siginificances found for shape analysis compared
-    with the Run 1 strategy. Even with 100\% error in the final bin
-  the shape analysis performs significantly better than before.}
-  \centering
-  \footnotesize
-  \begin{tabular}{ l | l | l | l | l | l | l }
-    Model & Mass/GeV & LSP Mass/GeV & Run 1 & Shape (X=0) & Shape (X=50) & Shape (X=100) \\ \hline
-    T2tt & 650 & 325 & 1.58 & 2.07& 1.66 & 1.57 \\ 
-    T2tt & 500 & 325 & 0.82 & 2.23 & 1.73 & 1.64 \\ 
-    T2tt & 425 & 325 & 2.01 & 2.98 & 2.28 & 2.15 \\ 
-    %T2qq & 600 & 550 & 8.33 & 11.54 & 7.28 & 6.54 \\ 
-    T2qq & 1200 & 100 & 1.58 & 3.47 & 2.43 & 2.24 \\ 
-    T2bb & 900 & 100 & 1.63 & 1.92 & 1.63 & 1.53 \\ 
-    T2bb & 600 & 580 & 0.62 & 0.94 & 0.64 & 0.58 \\ 
-    T1tttt & 1500 & 100 & 1.18 & 3.14 & 2.69 & 2.62 \\ 
-    T1tttt & 1200 & 800 & 0.86 & 1.80& 1.38 & 1.33 \\ 
-    T1qqqq & 1400 & 100 & 1.63 & 5.61 & 3.32 & 2.68 \\ 
-    T1qqqq & 1000 & 800 & 4.73 & 6.57 & 4.17 & 3.75 \\ 
-    T1bbbb & 1500 & 100 & 2.71 & 7.03 & 5.91 & 5.70 \\ 
-    T1bbbb & 1000 & 900 & 4.66 & 7.42 & 5.89 & 5.53 \\ 
-  \end{tabular}
-\end{table}
-

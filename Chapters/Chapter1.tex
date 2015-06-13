@@ -8,34 +8,51 @@
 
 %----------------------------------------------------------------------------------------
 The Large Hadron Collider (LHC) is a 27 km proton-proton synchrotron. 
-From 2009-2013 it has operated at $\sqrt{s}=7-8TeV$ providing has provided around $25fb^{-1}$ of data (Run 1). 
-This has been used to complete the Standard Model (SM) with the discovery of the Higgs boson 
-and placed new models of physics under intense scrutiny \cite{cmshiggs}\cite{atlashiggs}\cite{susyr1}. 
-Supersymmetry (SUSY) is the leading contender to replace the SM. 
-This makes direct searches for SUSY a significant part of the work carried out at the LHC. 
-The search focused on in this report will be $\alpha_T$, 
-an all-hadronic final state search with the Compact Muon Solenoid (CMS) detector 
-which has shown great strength in Run 1 \cite{search}. 
+From 2009-2013 it has operated at $\sqrt{s}=7-8TeV$ providing has provided around $25fb^{-1}$ of data (Run 1). After a long shutdown to allow operation at $\sqrt{s}=13$ the next Run 2 has begun and presents an excellent opportunity for new discovery. 
+%This has been used to complete the Standard Model (SM) with the discovery of the Higgs boson 
+%and placed new models of physics under intense scrutiny \cite{cmshiggs}\cite{atlashiggs}\cite{susyr1}. 
+%From 2013-2015 The LHC and detectors have been shut down for a range of upgrades to allow design conditions to be reached \cite{ls1}. 
+%From mid-2015 it is expected that the improvements will allow $\sqrt{s}=13-14TeV$ while increasing the instantaneous luminosity and halving the bunch spacing \cite{HighLumi}. 
+Supersymmetry (SUSY) is the leading contender to replace the SM. The search focused on in this report will be \alphat, 
+an all-hadronic final state search with the Compact Muon Solenoid (CMS) detector. 
+This has  provided stringent constraints on SUSY in Run 1 \cite{search}. Studies to improve the search for Run 2 will be discussed.
 
 \section {Supersymmetry}
 SUSY is an additional symmetry connecting each particle to a heavier superpartner. 
-Low mass ($\mathcal TeV$) SUSY is motivated by cancellation of the quadratically divergent loop corrections to the Higgs boson. 
+Low mass ($\mathcal TeV$ scale) SUSY is motivated by cancellation of the quadratically divergent loop corrections to the Higgs boson. 
 This requires a small splitting between the third generation squark masses and the top to avoid fine tuning 
 \ref{ R. Barbieri, D. Pappadopulo, S-particles at their naturalness lim- its. J. High Energy Phys. 10 (2009). doi:10.1088/1126-6708/ 2009/10/061}. 
-The mass found for the Higgs, at around 126 GeV, agrees well with phenomenological models of SUSY 
-with superpartners around the TeV scale \cite{susyhiggs}. 
 In R-parity conserving SUSY \cite{susywimp} the supersymmetric particles are pair produced and 
 decay to the lightest supersymmetric particle (LSP) which is massive and weakly interacting. 
 The pair production of coloured sparticles can be expected to result in a signature containing jets
-(especially those from b quarks if the third generation squarks are light) and missing energy \met.
+(especially those from b quarks if the third generation squarks are light) and missing momentum (\met).
 
-\section{CMS Detector} % This is for the header on each page - perhaps a shortened title
+\section{CMS Detector}
 
 %----------------------------------------------------------------------------------------
-The Compact Muon Solenoid (CMS \cite{CMSTDR}) is one of two general purpose detectors at the LHC which have performed exceptionally well during run 1. It is described in detail in \cite{CMS}. The coordinate system used by CMS takes the origin at the collision point. The z-axis points along the beam direction and defines the azimuthal angle, $\phi$. The psuedorapidity is defined by the polar angle, $\theta$, as $\eta=-ln(tan(\theta/2))$. The coverage of CMS is $|\eta|<5$. Transverse energies and momenta ($E_T $ and $p_T$)  are defined perpendicular to the beam \cite{cmsiop}. 
+The Compact Muon Solenoid (CMS \cite{CMSTDR}) is one of two general purpose detectors at the LHC which have performed exceptionally well during Run 1. 
+It is described in detail in \cite{CMS}. 
+The coordinate system used by CMS takes the origin at the collision point. 
+The z-axis points along the beam direction and defines the azimuthal angle, $\phi$. 
+The psuedorapidity is defined by the polar angle, $\theta$, as $\eta=-ln(tan(\theta/2))$. 
+The coverage of CMS is $|\eta|<5$. 
+Transverse energies and momenta ($E_T $ and $p_T$) are defined perpendicular to the beam \cite{cmsiop}. Significant features for the \alphat analysis are described below.
 
-Charged particle trajectories are measured by the silicon pixel and strip tracker \cite{siliconTDR} in order to find their momentum. The CMS tracker achieves $15\mu m$ accuracy and a 1\% resolution for a particle with momentum up to $p_T < 40GeV$ with coverage for $|\eta|<2.5$. Muons are measured in the range $|\eta|<2.4$ and a $p_T$ resolution from $1-5\%$ can be achieved for $p_T < 1Tev$. The ECAL measures the energy of incident photons and electrons with aresolution better than $0.5\%$ for $E_T > 100 GeV$. The barrel provides coverage up to $|\eta| < 1.4$ and is extended to $|\eta|<3$ by the endcap. The HCAL has coverage of $|\eta|<3.0$ \cite{hcal} and a resolution for $E_T > 100GeV$ of 11\%. When combined with the ECAL jets can be measured to a resolution of $\Delta E/E \approx 100 \%/\sqrt{E[GeV]} \oplus 5\%$.
-Potentially useful events are selected by the Level 1 (L1) hardware trigger which reduces the data rate from $\mathcal{0}40MHz$ to $100kHz$. These events are then processed in the HLT which utilises all detector information to further reduce the rate to $\mathcal{O}1kHz$.
+Charged particle trajectories are measured by the silicon pixel and strip tracker \cite{siliconTDR} 
+in order to find their momentum (reliant on the 3.8T solenoid).
+The CMS tracker achieves $15\mu m$ accuracy and a 1\% resolution for a particle with momentum 
+up to $p_T < 40GeV$ with coverage for $|\eta|<2.5$. 
+Muons are measured in the range $|\eta|<2.4$ and a $p_T$ resolution from $1-5\%$ can be achieved 
+for $p_T < 1Tev$. The ECAL measures the energy of incident photons and electrons with a resolution better  than $0.5\%$ for $E_T > 100 GeV$. The barrel provides
+ coverage up to $|\eta| < 1.4$ and is extended to 
+  $|\eta|<3$ by the endcap. The HCAL has coverage of $|\eta|<3.0$ \cite{hcal} and a resolution for $E_T > 100GeV$ of 11\%. 
+  When combined with the ECAL jets can be measured to a
+  resolution of $\Delta E/E \approx 100 \%/\sqrt{E[GeV]} \oplus 5\%$.
+Potentially interesting events are selected by the Level 1 (L1) 
+hardware trigger which reduces the data rate from $\mathcal{0}40MHz$ to $100kHz$. 
+These events are then processed in the HLT which utilises 
+all detector information to further reduce the rate 
+to $\mathcal{O}1kHz$.
 
 
 
