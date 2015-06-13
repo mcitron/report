@@ -182,13 +182,13 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Trigger Studies and the $\boldsymbol{\alpha_T}$ search} % Your thesis title - this is used in the title and abstract
+\thesistitle{Improving the sensitvity of the $\boldsymbol{\alpha_T}$ search} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
 \supervisor{Dr Oliver Buchmueller} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   
-\degree{Nine Month Report} % Your degree name - this is currently used in the title page and abstract
+\degree{Late Stage Assessment} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------   
 \authors{Matthew Citron} % Your name - this is used in the title page and abstract
 %-------------------------------------------------   

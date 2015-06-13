@@ -11,91 +11,111 @@
 %----------------------------------------------------------------------------------------
 %\section{Strategy in Run 1}
 
-In order to maximise sensitivity to a wide range of signal models 
-the final analysis bins must be carefully chosen. 
-In Run 1 a flat $\alphat > 0.55$ requirement was used. However, 
-while the \alphat variable is highly adept at removing the
-QCD multijet background it may not be optimal for distinguishing 
-signal from the remaining background. Additionally, each bin can have
-only one \alphat (and therefore \mht) threshold and no advantage 
-may be taken of the shape. Finally, each jet category has the same 
-\alphat threshold per \scalht bin. Even with genuine \met  higher jet multiplicities lead to 
-lower \alphat values and so more flexibility is desirable. 
-In this section when the \scalht bin for each particular jet and btag 
-category is considered this will be denoted as \scalhtcat.
+In Run 1, a flat $\alphat > 0.55$ requirement was used for 
+the signal region bins (higher thresholds were used for  
+low \scalht bins) designed to reject QCD. However, while 
+the \alphat variable is highly adept at removing the
+QCD multijet background it may not be optimal for 
+distinguishing signal from remaining electroweak 
+background. 
+Additionally, no advantage was taken of the shape 
+differences between signal and background in variables 
+based on missing momentum. Figure~\ref{alphdis} shows 
+the difference in \alphat distribution between a signal 
+model and electroweak background. 
+Finally, each jet category has the same \alphat 
+threshold per \scalht bin. Even with genuine \met, 
+higher jet multiplicities lead to lower \alphat values 
+and so more flexibility is 
+desirable. In this section when the \scalht bin for each 
+particular jet and b-tag category is considered this will 
+be denoted as \scalhtcat.
 
 
 \section{Strategy for Run 2}
 
-Taking into account trigger requirements and QCD backgrounds the \alphat thresholds are minimised in each bin. These may be revised after studies with data. Sensitivity is optimised
-by using a new discriminating variable such as \mht to conduct a shape analysis in each \scalhtcat bin. 
+Taking into account the trigger requirements for rate control and QCD 
+backgrounds the \alphat thresholds are minimised in each 
+bin. These may be revised after studies into contamination and rates using data. 
+Sensitivity is optimised by using a new discriminating variable based on \mht to 
+conduct a shape analysis in each \scalhtcat bin. 
 %To remain data driven a requirement is made on the number of expected control counts for the highest new variable threshold. 
-In each \scalhtcat bin the normalisation and systematics are set by the control samples
+In each \scalhtcat bin the normalisation and systematics 
+are set by the control samples
 and closure tests described in Section~\ref{sec:bkgd-est}. The scale of the event is
-thus fully controlled in data. Investigations are underway for how the shapes 
-and systematics can be found using the shape in the control regions. Given the low
-counts in the tails some kind of fit and extrapolation would be required. To minimise the extrapolation a conservative requirement of 10 expected control events is made on the highest new variable threshold. 
+thus fully controlled in data. Investigations are 
+ongoing into how the shapes 
+and systematics can be found using the relative difference in the shape 
+control regions measured in data relative to the MX prediction. Given the low
+counts in the tails of these distributions some kind of fit and extrapolation 
+would be required. To minimise the extrapolation a 
+conservative requirement of 10 expected closure events (inclusive on b-tag) is 
+made on the highest new variable threshold when deciding binning. 
 %Alternatively the systematics may be estimated entirely from MC by varying the main 
 %sources of systematic uncertainty and finding the effect on the shape.
 
 \section{Likelihood Model}
 
-The likelihood model used previously is described in detail in \cite{search}. 
-In each \scalhtcat bin there is an uncorrelated (log normal) nuisance per transfer factor for the control prediction. The shape analysis adds an additional dimension.
-There will be an additional nuisance for each systematic shape uncertainty.
+The likelihood model used previously is described in 
+detail in \cite{CMSAT8}. 
+In each \scalhtcat bin there is an uncorrelated (log 
+normal) nuisance per transfer factor for the control 
+prediction. The shape analysis adds an additional 
+dimension and there will be an additional nuisance for each systematic shape uncertainty.
 
-All results shown are calculated using asymptotic formulae. 
-A study was carried out into the reliability of this estimation and the results shown in \ref{asympToys}. 
-As seen the differences between CLs toy and the asymptotic formulae are below 10\%.
+Limits and significances are calculated using asymptotic 
+formulae\cite{asymp}. 
+A study was carried out into the reliability of this 
+estimation and the results shown in \ref{fig:asympToys}. 
+As seen the differences between toys and the 
+asymptotic formulae are below 10\%.
 
 \begin{figure}
   \centering
   %  \includegraphics{Figures/asympToys.png}
      \includegraphics[width=0.7\textwidth]{Figures/asympToys.png}
-  \caption{Comparison between asymptotic and toy MC limits}
+  \caption{Comparison between asymptotic and toy MC limits showing disagreement under 10\%}
   \label{fig:asympToys}
 \end{figure}
 
 \section{Results}
 
-In order to compare strategies in the absence of data the shape systematics must be estimated. A template for the plus one sigma systematic is found by multiplying each shape by an expontential such that 
-the difference from the nominal is set to X\% in the final bin 
+In order to compare strategies in the absence of data the shape systematics must be estimated. A template for the plus one sigma systematic is found by multiplying each shape by an exponential such that 
+the difference from the nominal value is set to X\% in the final bin 
 and the normalisation is unchanged. The down one sigma templates are found by 
-dividing by the same exponential and normalising. Results below are shown
-for 10/fb. Luminosity scenarios of 1/fb, 3/fb and 10/fb are under consideration.
-To be conservative systematics derived in Run 1 are utilised for the normalisation.
+dividing by the same exponential and normalising. Results  are shown for 10/fb. Luminosity scenarios of 1/fb, 3/fb and 10/fb are under consideration.
+To be conservative systematics derived from data in Run 1 are utilised for the normalisation.
 
-The variables considered were \alphat, \mht,$\mht/\scalht$, $\mht/\sqrt{\scalht}$ and 
-$M_eff$ ($\mht+\scalht$). The significances for a shape systematic 
-scenario of X=50\% and 10/fb are shown in Figure~\ref{fig:signif}. 
+The variables for the shape analysis were \alphat, \mht,$\mht/\scalht$, $\mht/\sqrt{\scalht}$ and 
+$M_{eff}$ ($\mht+\scalht$). The significances for a conservative shape systematic scenario of X=100\% and 10/fb are shown in Figure~\ref{fig:signif}. This is done for a range of both squark and gluino, compressed and uncompressed models. 
 
 \begin{figure}
 \centering
     \includegraphics[width=0.6\textwidth]{Figures/signif}
-  \caption{The \alphat distribution shown for a particular search region. The QCD background is completely removed by an \alphat cut at 0.55 while processes with true \met remain.}
+  \caption{The significance for a shape analysis with $X = 100$ using several possible variables. The \mht variable appears optimal over the range of models considered.}
   \label{fig:signif}
 \end{figure}
 
 As can be seen the \mht variable is consistently near or at the highest 
 significance. This can be expected as both compressed and uncompressed models can be expected 
 to have significant \mht even though the \scalht scales are very different. Variables optimised
-for compressed models (e.g. $\mht/\scalht$) and large mass splittings (e.g. $M_eff$) cannot perform consistently across a range of topologies.
+for compressed models (e.g. $\mht/\scalht$) and large mass splittings (e.g. $M_{eff}$) cannot perform consistently across a range of topologies.
 
-To evaluate the effect on performance of using a shape analysis compared to the
-Run 1 strategy several different shape systematics are compared. The results 
+Using \mht, the effect on performance of using a shape analysis compared to the
+Run 1 strategy for several different shape systematics are compared. The results 
 are shown in Table~\ref{table:syst} for $X = 0,50,100\%$. Even for the conservative
-$X=100\%$, significant gains over the previous strategy can be seen. Comparing
-$X=50,100\%$ to $X=0\%$ emphasises the importance of correctly evaluating the uncertainties on the shape.
+$X=100\%$, significant gains over the previous strategy can be seen. Comparing the large difference between
+$X=50,100\%$ and $X=0\%$ emphasises the importance of correctly evaluating the uncertainties on the shape.
 
 \begin{table}[!h]
-  \label{table:syst}
-  \caption{Summary of the siginificances found for shape analysis compared
+  
+  \caption{\label{table:syst} Summary of the siginificances found for shape analysis compared
     with the Run 1 strategy. Even with 100\% error in the final bin
-  the shape analysis performs significantly better than before.}
+  the shape analysis performs significantly better.}
   \centering
   \footnotesize
   \begin{tabular}{ l | l | l | l | l | l | l }
-    Model & Mass/GeV & LSP Mass/GeV & Run 1 & Shape (X=0) & Shape (X=50) & Shape (X=100) \\ \hline
+    Model & Mass/GeV & LSP Mass/GeV & Run 1/$\sigma$ & Shape (X=0)/$\sigma$ & Shape (X=50)/$\sigma$ & Shape (X=100)/$\sigma$ \\ \hline
     T2tt & 650 & 325      & 1.09& 1.83& 1.38& 1.27\\ 
     T2tt & 500 & 325      & 0.60& 1.93& 1.42& 1.33\\ 
     T2tt & 425 & 325      & 1.11& 2.25& 1.79& 1.65\\ 
